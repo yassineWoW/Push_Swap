@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 22:06:36 by yimizare          #+#    #+#             */
-/*   Updated: 2024/04/27 15:17:27 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:42:49 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,29 +53,6 @@ void	check_dups(char **nums)
 		i++;
 	}
 }
-// this function deletes tabs and gives us a string without them instead it's going to be filled with spaces
-
-char	*remove_tabs(char *s)
-{
-	char	*string;
-	char	**s_splited;
-	char	*temp;
-	int		i;
-
-	s_splited = ft_split(s, '\t');
-	if (!s_splited)
-		return (NULL);
-	string = NULL;
-	i = 0;
-	while(s_splited[i])
-	{
-		temp = ft_strjoin(string, " ");
-		string = ft_strjoin(temp, s_splited[i]);
-		i++;
-	}
-	free_2d_arrays(s_splited);
-	return (string);
-}
 
 // this function joins arguments and puts a space between them and then removes tabs if there's any 
 // and puts each number in a string of its own in a array of strings after it splited them with spaces
@@ -98,7 +75,6 @@ char	**get_args(int argc, char *argv[])
 			i++;
 		}
 	}
-	 //nums = remove_tabs(nums);
 	splitted_nums = ft_split(nums, ' ');
 	free(nums);
 	nums = NULL;

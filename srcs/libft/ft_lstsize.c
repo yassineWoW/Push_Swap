@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 11:18:27 by yimizare          #+#    #+#             */
-/*   Updated: 2024/04/26 21:47:49 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/01 12:17:50 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 int	ft_lstsize(t_stack *lst)
 {
+	t_stack *temp;
 	int	counter;
 
+	temp = lst;
 	counter = 0;
-	while (lst != NULL)
+	while (temp != NULL)
 	{
-		lst = lst->next;
+		temp = temp->next;
 		counter++;
 	}
 	return (counter);

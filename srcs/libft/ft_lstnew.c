@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:08:18 by yimizare          #+#    #+#             */
-/*   Updated: 2024/04/22 19:26:17 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/01 11:59:45 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_stack	*ft_lstnew(int	content, int index)
+t_stack	*ft_lstnew(int content, int index)
 {
 	t_stack	*newnode;
 
