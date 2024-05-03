@@ -6,17 +6,17 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 16:06:01 by yimizare          #+#    #+#             */
-/*   Updated: 2024/05/01 11:58:09 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/02 13:20:04 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	ft_atoi(const char	*string)
+long long	ft_atoi(const char	*string)
 {
-	long		i;
-	long		ichara;
-	long		result;
+	long long		i;
+	long long		ichara;
+	long long		result;
 
 	i = 0;
 	ichara = 1;

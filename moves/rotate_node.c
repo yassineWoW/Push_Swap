@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 15:15:18 by yimizare          #+#    #+#             */
-/*   Updated: 2024/04/26 18:45:00 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/02 12:26:19 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,14 @@ void	rotate(t_stack **src, char c)
 	}
 }
 
-void	rrotate(t_stack **stack1, t_stack **stack2)
+void	rrotate(t_stack **stack1, t_stack **stack2, char c)
 {
 	if (ft_lstsize(*stack1) > 1 && ft_lstsize(*stack2) > 1)
 	{
 		rotate(stack1, 'r');
 		rotate(stack2, 'r');
-		write(1, "rr\n", 3);
+		if (c == 'r')
+			write(1, "rr\n", 3);
 	}
 }
 
@@ -66,13 +67,14 @@ void	rev_rotate(t_stack **stack, char c)
 	}
 }
 
-void	r_rev_rotate(t_stack **stack1, t_stack **stack2)
+void	r_rev_rotate(t_stack **stack1, t_stack **stack2, char c)
 {
 	if (ft_lstsize(*stack1) > 1 && ft_lstsize(*stack2) > 1)
 	{
 		rev_rotate(stack1, 'r');
 		rev_rotate(stack2, 'r');
-		write(1, "rrr", 4);
+		if (c == 'r')
+			write(1, "rrr\n", 4);
 	}
 }
 // void	test(t_stack *stack_a)

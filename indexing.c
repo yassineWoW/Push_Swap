@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 13:41:27 by yimizare          #+#    #+#             */
-/*   Updated: 2024/05/01 15:59:26 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/03 16:58:30 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	fill_array(t_stack *stack, int *array, int array_size)
 {
-	t_stack *temp;
+	t_stack	*temp;
 	int		i;
-	
+
 	temp = stack;
 	i = 0;
 	while (temp && i < array_size)
@@ -29,17 +29,17 @@ void	fill_array(t_stack *stack, int *array, int array_size)
 void	swap_index(int *arr, int i, int j)
 {
 	int	temp;
-	
+
 	temp = arr[i];
 	arr[i] = arr[j];
 	arr[j] = temp;
 }
 
-int		find_smallest_index(int arr[],int start, int end)
+int	find_smallest_index(int arr[], int start, int end)
 {
-	int		i;
-	int		j;
-	
+	int	i;
+	int	j;
+
 	j = start;
 	i = j + 1;
 	while (i < end)
@@ -54,7 +54,7 @@ int		find_smallest_index(int arr[],int start, int end)
 void	sort_array(int *arr, int len)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	j = 0;

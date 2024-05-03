@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 15:15:15 by yimizare          #+#    #+#             */
-/*   Updated: 2024/04/26 21:53:45 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/01 18:23:11 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,12 @@ void	swap(t_stack **stack, char c)
 	}
 }
 
-void	s_swap(t_stack **stack1, t_stack **stack2)
+void	s_swap(t_stack **stack1, t_stack **stack2, char c)
 {
 	swap(stack1, 's');
 	swap(stack2, 's');
-	write(1, "ss\n", 3);
+	if (c == 's')
+		write(1, "ss\n", 3);
 }
 
 // void	test(t_stack *stack_a)

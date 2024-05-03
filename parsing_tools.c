@@ -6,13 +6,23 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 22:06:36 by yimizare          #+#    #+#             */
-/*   Updated: 2024/04/29 15:42:49 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:14:17 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// this function is to be used to free double pointers and their pointers mostly used for the split function
+void	check_max_int(char *number)
+{
+	long long	num;
+
+	num = ft_atoi(number);
+	if (num > 2147483647 || num < -2147483648)
+	{
+		write(2, "Error\n", 6);
+		exit(1);
+	}
+}
 
 void	free_2d_arrays(char **s)
 {
@@ -30,7 +40,7 @@ void	free_2d_arrays(char **s)
 	free(s);
 	s = NULL;
 }
-// this function checks if there's duplicates in the number to be sorted
+
 void	check_dups(char **nums)
 {
 	int	i;
@@ -39,7 +49,7 @@ void	check_dups(char **nums)
 	i = 0;
 	j = 1;
 	while (nums[i])
-	{ 
+	{
 		while (nums[j])
 		{
 			if (ft_atoi(nums[i]) == ft_atoi(nums[j]))
@@ -53,10 +63,6 @@ void	check_dups(char **nums)
 		i++;
 	}
 }
-
-// this function joins arguments and puts a space between them and then removes tabs if there's any 
-// and puts each number in a string of its own in a array of strings after it splited them with spaces
-// so that "1 5 6 7 8" becomes "1", "7", "6", "5", "8", 
 
 char	**get_args(int argc, char *argv[])
 {

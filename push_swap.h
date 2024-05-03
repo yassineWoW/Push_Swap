@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 07:14:34 by yimizare          #+#    #+#             */
-/*   Updated: 2024/05/01 17:32:47 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:00:58 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ void	check_for_empty(int argc, char **argv);
 void	check_for_alpha(char **splited_nums);
 void	push_to_stack(t_stack **src, t_stack **dest, char c);
 void	rotate(t_stack **src, char c);
-void	rrotate(t_stack **stack1, t_stack **stack2);
+void	rrotate(t_stack **stack1, t_stack **stack2, char c);
 void	rev_rotate(t_stack **stack, char c);
-void	r_rev_rotate(t_stack **stack1, t_stack **stack2);
+void	r_rev_rotate(t_stack **stack1, t_stack **stack2, char c);
 void	swap(t_stack **stack, char c);
-void	s_swap(t_stack **stack1, t_stack **stack2);
+void	s_swap(t_stack **stack1, t_stack **stack2, char c);
 void	sort_3(t_stack **stack_a);
 void	sort_4(t_stack **stack_a, t_stack **stack_b);
 void	sort_5(t_stack **stack_a, t_stack **stack_b);
@@ -42,5 +42,7 @@ int		find_min(t_stack *stack);
 void	push_swap(int argc, char **argv);
 void	test(t_stack *stack_a);
 void	index_list(t_stack **stack, int len);
+void	check_sign(char **nums);
+void	check_max_int(char *numbers);
 
 #endif

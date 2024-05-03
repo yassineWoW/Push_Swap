@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 07:14:10 by yimizare          #+#    #+#             */
-/*   Updated: 2024/05/01 17:32:18 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/03 18:39:06 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,28 +27,25 @@ void	sort_choice(t_stack *stack_a, t_stack *stack_b)
 			sort_nums(&stack_a, &stack_b, 15);
 		else
 			sort_nums(&stack_a, &stack_b, 50);
+		ft_lstclear(&stack_a);
+		ft_lstclear(&stack_b);
 	}
-	
 }
 
 void	push_swap(int argc, char **argv)
 {
-	char 	**numbers;
+	char	**numbers;
 	t_stack	*stack_a;
-	t_stack *stack_b;
+	t_stack	*stack_b;
 
 	stack_a = NULL;
 	stack_b = NULL;
 	check_for_empty(argc, argv);
 	numbers = get_args(argc, argv);
 	check_for_alpha(numbers);
+	check_sign(numbers);
 	check_dups(numbers);
 	put_numbers_into_nodes(numbers, &stack_a);
 	index_list(&stack_a, ft_lstsize(stack_a));
 	sort_choice(stack_a, stack_b);
-	ft_lstclear(&stack_a);
-	ft_lstclear(&stack_b);
-}
-
-
- 
+}		

@@ -6,13 +6,34 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 14:24:29 by yimizare          #+#    #+#             */
-/*   Updated: 2024/05/01 17:20:12 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/03 18:46:25 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
- void	check_for_empty(int argc, char **argv)
+void	check_sign(char **nums)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (nums[i])
+	{
+		if ((nums[i][j] == '+' || nums[i][j] == '-') && nums[i][j] != '\0')
+			j++;
+		if (!ft_isdigit(nums[i][j]) && nums[i][j] != '\0')
+		{
+			write(2, "Error2\n", 7);
+			free_2d_arrays(nums);
+			exit(1);
+		}
+		i++;
+	}
+}
+
+void	check_for_empty(int argc, char **argv)
 {
 	int	i;
 
@@ -21,7 +42,7 @@
 	{
 		if (ft_strlen(argv[i]) == 0)
 		{
-			write(2, "Error\n", 6);
+			write(2, "Error1\n", 7);
 			exit(EXIT_FAILURE);
 		}
 		i++;
@@ -30,8 +51,8 @@
 
 void	check_for_alpha(char **splited_nums)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
@@ -39,9 +60,11 @@ void	check_for_alpha(char **splited_nums)
 	{
 		while (splited_nums[i][j] != '\0')
 		{
-			if (splited_nums[i][j] != '\0' && !ft_isdigit(splited_nums[i][j]))
+			if (splited_nums[i][j] == '+' || splited_nums[i][j] == '-')
+			j++;
+			if (!ft_isdigit(splited_nums[i][j]))
 			{
-				write(2, "Error\n", 6);
+				write(2, "Error3\n", 7);
 				free_2d_arrays(splited_nums);
 				exit(EXIT_FAILURE);
 			}
@@ -50,8 +73,6 @@ void	check_for_alpha(char **splited_nums)
 		i++;
 	}
 }
-
-// this function checks if the numbers to be sorted are already sorted 
 
 int	is_sorted(t_stack *stack)
 {
@@ -66,13 +87,14 @@ int	is_sorted(t_stack *stack)
 
 void	put_numbers_into_nodes(char **numbers, t_stack	**stack_a)
 {
- 	int	i;
-	int	num;	
+	int	i;
+	int	num;
 
 	i = 0;
 	num = 0;
 	while (numbers[i])
 	{
+		check_max_int(numbers[i]);
 		num = ft_atoi(numbers[i]);
 		ft_lstadd_back(stack_a, ft_lstnew(num, i));
 		i++;
