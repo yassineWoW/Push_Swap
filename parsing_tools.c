@@ -6,11 +6,34 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 22:06:36 by yimizare          #+#    #+#             */
-/*   Updated: 2024/05/03 17:14:17 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/05 20:09:01 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	check_white_space_string(int argc, char *argv[])
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (i < argc)
+	{
+		j = 0;
+		if (argv[i][j] != '\0' && !ft_isdigit(argv[i][j]))
+		{
+			while (argv[i][j] != '\0' && ft_isdigit(argv[i][j]) == 0)
+				j++;
+			if (argv[i][j] == '\0')
+			{
+				write(2, "Error\n", 6);
+				exit(EXIT_FAILURE);
+			}
+		}
+		i++;
+	}
+}
 
 void	check_max_int(char *number)
 {
@@ -47,9 +70,9 @@ void	check_dups(char **nums)
 	int	j;
 
 	i = 0;
-	j = 1;
 	while (nums[i])
 	{
+		j = i + 1;
 		while (nums[j])
 		{
 			if (ft_atoi(nums[i]) == ft_atoi(nums[j]))
@@ -58,13 +81,14 @@ void	check_dups(char **nums)
 				free_2d_arrays(nums);
 				exit(1);
 			}
-			j++;
+			else
+				j++;
 		}
 		i++;
 	}
 }
 
-char	**get_args(int argc, char *argv[])
+char	** get_args(int argc, char *argv[])
 {
 	char	**splitted_nums;
 	char	*nums;
@@ -72,6 +96,7 @@ char	**get_args(int argc, char *argv[])
 
 	i = 1;
 	nums = NULL;
+	splitted_nums = NULL;
 	if (argc >= 2)
 	{
 		while (i < argc)

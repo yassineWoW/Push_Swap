@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 14:24:29 by yimizare          #+#    #+#             */
-/*   Updated: 2024/05/03 18:46:25 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/05 20:18:24 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,20 @@ void	check_sign(char **nums)
 	int	j;
 
 	i = 0;
-	j = 0;
 	while (nums[i])
 	{
+		j = 0;
 		if ((nums[i][j] == '+' || nums[i][j] == '-') && nums[i][j] != '\0')
 			j++;
 		if (!ft_isdigit(nums[i][j]) && nums[i][j] != '\0')
 		{
-			write(2, "Error2\n", 7);
+			write(2, "Error\n", 6);
+			free_2d_arrays(nums);
+			exit(1);
+		}
+		if ((nums[i][j] == '+' || nums[i][j] == '-') && nums[i][j] != '\0')
+		{
+			write(2, "Error\n", 6);
 			free_2d_arrays(nums);
 			exit(1);
 		}
@@ -36,13 +42,15 @@ void	check_sign(char **nums)
 void	check_for_empty(int argc, char **argv)
 {
 	int	i;
+	int	j;
 
 	i = 1;
+	j = 0;
 	while (i < argc)
 	{
 		if (ft_strlen(argv[i]) == 0)
 		{
-			write(2, "Error1\n", 7);
+			write(2, "Error\n", 6);
 			exit(EXIT_FAILURE);
 		}
 		i++;
@@ -55,18 +63,18 @@ void	check_for_alpha(char **splited_nums)
 	int		j;
 
 	i = 0;
-	j = 0;
 	while (splited_nums[i] != NULL)
 	{
+		j = 0;
 		while (splited_nums[i][j] != '\0')
 		{
 			if (splited_nums[i][j] == '+' || splited_nums[i][j] == '-')
-			j++;
+				j++;
 			if (!ft_isdigit(splited_nums[i][j]))
 			{
-				write(2, "Error3\n", 7);
+				write(2, "Error\n", 6);
 				free_2d_arrays(splited_nums);
-				exit(EXIT_FAILURE);
+				exit(1);
 			}
 			j++;
 		}
@@ -74,13 +82,15 @@ void	check_for_alpha(char **splited_nums)
 	}
 }
 
-int	is_sorted(t_stack *stack)
+int	is_sorted(t_stack *stack_a)
 {
-	while (stack->next)
+	if (ft_lstsize(stack_a) == 0)
+		return (1);
+	while (stack_a->next)
 	{
-		if (stack->content > stack->next->content)
+		if (stack_a->content > stack_a->next->content)
 			return (1);
-		stack = stack->next;
+		stack_a = stack_a->next;
 	}
 	return (0);
 }

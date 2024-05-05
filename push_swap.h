@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 07:14:34 by yimizare          #+#    #+#             */
-/*   Updated: 2024/05/03 17:00:58 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/05 12:46:08 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include "srcs/libft/libft.h"
 
 char	**get_args(int argc, char *argv[]);
-int		is_sorted(t_stack *stack);
+int		is_sorted(t_stack *stack_a);
 void	check_dups(char **nums);
 void	free_2d_arrays(char **s);
 void	push_to_stack(t_stack **src, t_stack **dest, char c);
@@ -44,5 +44,6 @@ void	test(t_stack *stack_a);
 void	index_list(t_stack **stack, int len);
 void	check_sign(char **nums);
 void	check_max_int(char *numbers);
+void	check_white_space_string(int argc, char *argv[]);
 
 #endif

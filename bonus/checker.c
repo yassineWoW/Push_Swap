@@ -6,11 +6,11 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 18:09:06 by yimizare          #+#    #+#             */
-/*   Updated: 2024/05/03 17:12:00 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/05 19:29:00 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "checker_bonus.h"
 
 void	check_moves(t_stack **stack_a, t_stack **stack_b)
 {
@@ -30,10 +30,10 @@ void	check_moves(t_stack **stack_a, t_stack **stack_b)
 		free(line);
 		line = NULL;
 	}
-	if (is_sorted(*stack_a) == 1)
+	if (is_sorted_b(*stack_a, *stack_b) == 1)
 		write(1, "KO\n", 3);
 	else
-		write(2, "OK\n", 3);
+		write(1, "OK\n", 3);
 }
 
 int	main(int argc, char *argv[])
@@ -42,11 +42,13 @@ int	main(int argc, char *argv[])
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
+	numbers = NULL;
 	if (argc >= 2)
 	{
 		stack_a = NULL;
 		stack_b = NULL;
 		check_for_empty(argc, argv);
+		check_white_space_string(argc, argv);
 		numbers = get_args(argc, argv);
 		check_sign(numbers);
 		check_for_alpha(numbers);
@@ -56,5 +58,7 @@ int	main(int argc, char *argv[])
 		ft_lstclear(&stack_a);
 		ft_lstclear(&stack_b);
 	}
+	else
+		exit(0);
 	return (0);
 }

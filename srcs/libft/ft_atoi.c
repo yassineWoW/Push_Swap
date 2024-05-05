@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 16:06:01 by yimizare          #+#    #+#             */
-/*   Updated: 2024/05/02 13:20:04 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/05 16:24:19 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,12 @@ long long	ft_atoi(const char	*string)
 	}
 	else if (string[i] == '+')
 		i++;
-	while (ft_isdigit(string[i]))
+	while (string[i])
 	{
-		result *= 10;
-		result += string[i] - '0';
+		if (ft_isdigit(string[i]))
+			result = result * 10 + (string[i] - '0');
+		else
+			(write(2, "Error\n", 6), exit(1));
 		i++;
 	}
 	return (result * ichara);

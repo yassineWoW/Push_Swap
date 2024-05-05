@@ -6,11 +6,24 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 18:11:50 by yimizare          #+#    #+#             */
-/*   Updated: 2024/05/03 17:09:34 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/05 19:07:23 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "checker_bonus.h"
+
+int	is_sorted_b(t_stack *stack_a, t_stack *stack_b)
+{
+	if (ft_lstsize(stack_a) == 0 || ft_lstsize(stack_b))
+		return (1);
+	while (stack_a->next)
+	{
+		if (stack_a->content > stack_a->next->content)
+			return (1);
+		stack_a = stack_a->next;
+	}
+	return (0);
+}
 
 void	ft_error(t_stack **stack_a, t_stack **stack_b)
 {

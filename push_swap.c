@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 07:14:10 by yimizare          #+#    #+#             */
-/*   Updated: 2024/05/03 18:39:06 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/05 13:03:47 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,14 @@ void	push_swap(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
+	numbers = NULL;
 	check_for_empty(argc, argv);
+	check_white_space_string(argc, argv);
 	numbers = get_args(argc, argv);
+	check_dups(numbers);
 	check_for_alpha(numbers);
 	check_sign(numbers);
-	check_dups(numbers);
 	put_numbers_into_nodes(numbers, &stack_a);
 	index_list(&stack_a, ft_lstsize(stack_a));
 	sort_choice(stack_a, stack_b);
-}		
+}
