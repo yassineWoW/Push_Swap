@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 17:43:41 by yimizare          #+#    #+#             */
-/*   Updated: 2024/05/05 12:50:53 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/05 21:00:44 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#ifndef CHECKER_BONUS_H
+# define CHECKER_BONUS_H
 
 # include "../srcs/libft/libft.h"
 # include "../push_swap.h"

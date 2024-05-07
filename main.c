@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 14:53:12 by yimizare          #+#    #+#             */
-/*   Updated: 2024/05/05 15:19:22 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/05 21:10:58 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	main(int argc, char *argv[])
 	else
 	{
 		push_swap(argc, argv);
-		system("leaks push_swap");
 	}
 	return (0);
 }

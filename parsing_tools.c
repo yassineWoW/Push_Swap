@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 22:06:36 by yimizare          #+#    #+#             */
-/*   Updated: 2024/05/05 20:09:01 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/05 21:08:48 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	check_dups(char **nums)
 	}
 }
 
-char	** get_args(int argc, char *argv[])
+char	**get_args(int argc, char *argv[])
 {
 	char	**splitted_nums;
 	char	*nums;

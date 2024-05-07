@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 19:20:00 by yimizare          #+#    #+#             */
-/*   Updated: 2024/05/01 16:49:19 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:07:38 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	get_index_value(t_stack *stack_b, int index)
 {
 	int	value;
 
-	value = -1;
+	value = 0;
 	while (stack_b)
 	{
 		if (stack_b->index == index)

@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:24:53 by yimizare          #+#    #+#             */
-/*   Updated: 2024/05/02 18:45:02 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/05 20:50:33 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,10 @@ char		*ft_strdup(const char *s1);
 void		*ft_calloc(size_t count, size_t size);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char *s1, char *s2);
-char		*ft_strtrim(char const *s1, char const *set);
 char		**ft_split(char const *s, char c);
 char		*ft_itoa(int n);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
-void		ft_putchar_fd(char c, int fd);
-void		ft_putstr_fd(char *s, int fd);
-void		ft_putnbr_fd(int n, int fd);
-void		ft_putendl_fd(char *s, int fd);
 t_stack		*ft_lstnew(int content, int index);
 void		ft_lstadd_front(t_stack **lst, t_stack *new);
 void		ft_lstadd_back(t_stack **lst, t_stack *new);

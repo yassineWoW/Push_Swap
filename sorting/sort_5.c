@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 19:20:22 by yimizare          #+#    #+#             */
-/*   Updated: 2024/05/01 16:57:27 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/06 15:42:36 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,21 +53,3 @@ void	sort_5(t_stack **stack_a, t_stack **stack_b)
 		push_to_stack(stack_b, stack_a, 'a');
 	}
 }
-
-// void	test(t_stack *stack_a, t_stack *stack_b)
-// {
-// 	printf("============== stack_a   =================\n");
-// 	while (stack_a)
-// 	{
-// 		printf("%d\n", stack_a->content);
-// 		stack_a = stack_a->next;
-// 	}
-// 	printf("========================================\n");
-// 	printf("============== stack_b	 =================\n");
-// 	while (stack_b)
-// 	{
-// 		printf("%d\n", stack_b->content);
-// 		stack_b = stack_b->next;
-// 	}
-// 		printf("========================================\n");
-// }

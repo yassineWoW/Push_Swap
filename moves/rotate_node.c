@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 15:15:18 by yimizare          #+#    #+#             */
-/*   Updated: 2024/05/02 12:26:19 by yimizare         ###   ########.fr       */
+/*   Updated: 2024/05/06 13:28:27 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,24 +77,3 @@ void	r_rev_rotate(t_stack **stack1, t_stack **stack2, char c)
 			write(1, "rrr\n", 4);
 	}
 }
-// void	test(t_stack *stack_a)
-// {
-// 	printf("============== stack_a ===========\n");
-// 	while (stack_a)
-// 	{
-// 		printf("%d\n", stack_a->content);
-// 		stack_a = stack_a->next;
-// 	}
-// 	printf("=====================================\n");
-// }
-// int main()
-// {
-// 	t_stack *stack_a;
-// 	stack_a = ft_lstnew(6, 0);
-// 	ft_lstadd_back(&stack_a, ft_lstnew(7, 1));
-// 	ft_lstadd_back(&stack_a, ft_lstnew(8, 1));
-// 	ft_lstadd_back(&stack_a, ft_lstnew(5, 1));
-// 	test(stack_a);
-// 	rotate(&stack_a, 'a');	
-// 	test(stack_a);
-// }

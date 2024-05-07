@@ -26,11 +26,11 @@ $(NAME) : $(O_FILES)
 		make -C	$(LIBFT)
 		$(CC) $(CFLAGS) $(O_FILES) $(LIBFT_NAME) -o $@
 
-all : $(NAME)
-
 $(BONUS_NAME) : $(O_FILES_B)
 		make -C $(LIBFT)
 		$(CC) $(CFLAGS) $(O_FILES_B) $(LIBFT_NAME) -o $@
+
+all : $(NAME)	$(BONUS_NAME)
 
 bonus : $(BONUS_NAME)
 
@@ -42,8 +42,6 @@ fclean : clean
 		make fclean -C $(LIBFT)
 		rm -f $(NAME) $(BONUS_NAME)
 
-re : fclean all
+re : fclean all	bonus
 
-rebonus : fclean bonus
-
-.PHONY : clean fclean
+.PHONY : clean fclean 
